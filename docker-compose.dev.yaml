@@ -1,0 +1,13 @@
+version: '3.9'
+
+volumes:
+  emqx-data:
+  emqx-etc:
+  emqx-log:
+
+services:
+  emqx:
+    volumes:
+      - emqx-data:/opt/emqx/data
+      - emqx-etc:/opt/emqx/etc
+      - emqx-log:/opt/emqx/log
