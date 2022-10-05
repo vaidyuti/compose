@@ -1,5 +1,5 @@
 
-.PHONY: build, re-build, up, down, list, logs, test, makemigrations
+.PHONY: restart, build, re-build, up, down, list, logs
 
  
 DOCKER_VERSION := $(shell docker --version 2>/dev/null)
@@ -16,6 +16,8 @@ ifndef DOCKER_COMPOSE_VERSION
     $(error "command docker-compose is not available, please install Docker")
 endif
 
+restart:
+	docker-compose -f $(docker_config_file) restart
 re-build:
 	docker-compose -f $(docker_config_file) build --no-cache
 
