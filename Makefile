@@ -17,21 +17,21 @@ ifndef DOCKER_COMPOSE_VERSION
 endif
 
 restart:
-	docker-compose -f $(docker_config_file) restart
+	@docker-compose -f $(docker_config_file) restart
 re-build:
-	docker-compose -f $(docker_config_file) build --no-cache
+	@docker-compose -f $(docker_config_file) build --no-cache
 
 build:
-	docker-compose -f $(docker_config_file) build
+	@docker-compose -f $(docker_config_file) build
 
 up:
-	docker-compose -f $(docker_config_file) up -d
+	@docker-compose -f $(docker_config_file) up -d
 
 down:
-	docker-compose -f $(docker_config_file) down
+	@docker-compose -f $(docker_config_file) down
 
 list:
-	docker-compose -f $(docker_config_file) ps
+	@docker-compose -f $(docker_config_file) ps
 
 logs:
-	docker-compose -f $(docker_config_file) logs
+	@docker-compose -f $(docker_config_file) logs
